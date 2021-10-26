@@ -1,0 +1,41 @@
+.usercard {
+    width: 350px;
+    font-size: 0.95rem;
+  }
+  .image img {
+    margin-left: 25%;
+    border-radius: 20px;
+  }
+  .card {
+    width: 350px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .brand {
+      font-size: 1.75rem;
+    }
+    .users-head {
+      font-size: 0.95rem;
+    }
+    .card {
+      width: 300px;
+      font-size: 0.9rem;
+    }
+    .usercard {
+      width: 300px;
+      font-size: 0.9rem;
+    }
+    h3,
+    h2 {
+      font-size: 1rem;
+    }
+    .form-control {
+      height: 6vh;
+      height: 6vh;
+      font-size: 0.8rem;
+    }
+    .form label {
+      font-size: 0.85rem;
+    }
+  }
+  
