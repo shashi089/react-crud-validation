@@ -4,18 +4,18 @@ import { useState, useContext } from "react";
 import { Context } from "../Context";
 import ProfileEdit from "./subComponents/ProfileEdit";
 
-function CreateUser() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [company, setCompany] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setStatename] = useState("");
+function CreateUser(props) {
+  const [name] = useState("");
+  const [email] = useState("");
+  const [country] = useState("");
+  const [company] = useState("");
+  const [city] = useState("");
+  const [state] = useState("");
   const context = useContext(Context);
   const [addeduser, setAddeduser] = useState(true);
 
   //creating
-  const postUser = async () => {
+  const postuser = async ({name,email,company,country,city,state}) => {
     let { data } = await axios.post(
       "https://611f263e9771bf001785c72a.mockapi.io/crud",
       {
@@ -35,11 +35,6 @@ function CreateUser() {
     setAddeduser(false);
   };
 
-  let handleSubmit = (event) => {
-    event.preventDefault();
-    postUser();
-  };
-
   return (
     <>
       <div className="Container">
@@ -53,13 +48,7 @@ function CreateUser() {
               country={country}
               state={state}
               city={city}
-              setName={setName}
-              setEmail={setEmail}
-              setCompany={setCompany}
-              setCountry={setCountry}
-              setStatename={setStatename}
-              setCity={setCity}
-              handleSubmit={handleSubmit}
+              putuser={postuser}
             />
           </>
         ) : (

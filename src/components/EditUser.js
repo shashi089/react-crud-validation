@@ -51,12 +51,6 @@ export default function EditUser({ match }) {
     setUserNotEdited(false);
   };
 
-  //to handle sumbmit and call put method
-  let handleSubmit = (event) => {
-    event.preventDefault();
-    PutUser();
-  };
-
   return (
     <>
       <div className="container">
@@ -69,10 +63,7 @@ export default function EditUser({ match }) {
               name={name}
               email={email}
               country={country}
-              setName={setName}
-              setEmail={setEmail}
-              setCountry={setCountry}
-              handleSubmit={handleSubmit}
+              PostOrPutuser={PutUser}
             />
           </>
         ) : (

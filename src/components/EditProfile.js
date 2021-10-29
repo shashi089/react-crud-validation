@@ -58,12 +58,6 @@ export default function EditProfile({ match }) {
     setProfileNotEdited(false);
   };
 
-  //handle the submit and call putuser
-  let handleSubmit = (event) => {
-    event.preventDefault();
-    putuser();
-  };
-
   return (
     <>
       <div className="container">
@@ -79,13 +73,7 @@ export default function EditProfile({ match }) {
               country={country}
               state={state}
               city={city}
-              setName={setName}
-              setEmail={setEmail}
-              setCompany={setCompany}
-              setCountry={setCountry}
-              setStatename={setStatename}
-              setCity={setCity}
-              handleSubmit={handleSubmit}
+              putuser={putuser}
             />
           </>
         ) : (
